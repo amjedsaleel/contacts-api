@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 
-def get_picture_upload_path(self):
+def get_picture_upload_path(self, filename,):
     """
     It returns dynamic upload path for picture field in  Contact model,
     Based on logged user
