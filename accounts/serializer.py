@@ -1,5 +1,6 @@
 # Django
 from django.contrib.auth.models import User
+from django.contrib.auth import password_validation
 
 # Rest framework work
 from rest_framework import serializers
@@ -20,6 +21,8 @@ class UserCreationSerializer(serializers.ModelSerializer):
         """ Checks the passwords is matching or not """
         if attrs['password'] != attrs['password2']:
             raise serializers.ValidationError({"password": "Password fields didn't match."})
+
+        password_validation.validate_password(password=attrs['password'])
 
         return attrs
 
