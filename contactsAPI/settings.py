@@ -39,6 +39,7 @@ INSTALLED_APPS = [
 
     # Apps
     'contact.apps.ContactConfig',
+    'accounts.apps.AccountsConfig',
 
     # Installed via pip
     'rest_framework',
